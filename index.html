@@ -11,10 +11,25 @@
     <div class = 'card' id = 'main_card'>
         <img src="" alt="Imagen del señor de los anillos">
         <h1>The lord of the rings</h1>
+        <span>Autor: J.R.R Tolkien</span>
         <span>600 páginas</span>
         <span>Aún no leído</span>
     </div>
-    
+
     <button type="button" onclick="menos();"> <- </button><button type="button" onclick="mas();"> -></button>
+    <br>
+    <form name = 'book_info' action="javascript:addBook()">
+        <label for="title_add">Título del libro: </label>
+        <input type="text" id = "title_add"><br>
+        <label for="author_add">Autor del libro: </label>
+        <input type="text" id = "author_add"><br>
+        <label for="pages_add">Páginas del libro: </label>
+        <input type="number" id = "pages_add"><br>
+        <label for="read_add">¿Lo has leído? </label>
+        <input type="checkbox" name="read_add" id="read_add" value=true><br>
+        <input type="submit" value="Enviar información">
+    </div>
+    
+
 </body>
 </html>
