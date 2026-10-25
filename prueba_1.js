@@ -8,13 +8,14 @@ function addToLibrary(library, book_obj){
     }
 }
 
-function book(title, author, pages, read){
+function book(title, author, pages, read, src){
 
     this.title = title;
     this.author = author;
     this.pages = pages;
 
     this.read = read;
+    this.src = src;
 
     this.info = function (){
         return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read? 'read': 'not read yet'}`;
@@ -23,11 +24,10 @@ function book(title, author, pages, read){
 
 
 
-theHobbit = new book("The Hobbit", 'J.R.R Tolkien', 299, true)
-dune = new book("Dune", 'Frank Herbert', 600, true)
-lotr = new book("The Lord Of The Rings", 'J.R.R Tolkien', 600, true)
-redDragon = new book("The Red Dragon", 'Unknown', 299, false)
-
+theHobbit = new book("The Hobbit", 'J.R.R Tolkien', 299, true, './src/hobbit.jpg')
+dune = new book("Dune", 'Frank Herbert', 600, true, './src/dune.jpg')
+lotr = new book("The Lord Of The Rings", 'J.R.R Tolkien', 600, true, './src/lotr.jpg')
+redDragon = new book("The Red Dragon", 'Unknown', 299, false,'./src/red_dragon.jpg')
 
 addToLibrary(library, theHobbit)
 addToLibrary(library, dune)
@@ -37,13 +37,15 @@ addToLibrary(library, redDragon)
 let index = 0
 
 function infoCard(book_obj){
-    return `
-    <img src="" alt="Imagen de ${book_obj.title}">
-    <h1>${book_obj.title}</h1>
-    <span>${book_obj.author}</span>
-    <span>${book_obj.pages}</span>
-    <span>¿Leído? : ${book_obj.read}</span>
-    `
+    
+    console.log(book_obj.src)
+    document.getElementById("img_card").alt = book_obj.title
+    document.getElementById("img_card").src = book_obj.src
+    document.getElementById("title_card").textContent = book_obj.title
+    document.getElementById("author_card").textContent = "Autor: " + book_obj.author
+    document.getElementById("pages_card").textContent = "Páginas: " + book_obj.pages
+    document.getElementById("status_card").textContent = book_obj.read ? "Leído" : "Aún no leído"
+
 }
 
 function validateBookStrings(title){
@@ -80,11 +82,11 @@ function menos(){
     }
 
     let cardData = library.at(index);
+    infoCard(cardData);
 
     console.log(index - 1, library.length)
 
-    document.getElementById("main_card").innerHTML = infoCard(cardData)
-
+    
 }
 
 function mas(){
@@ -97,5 +99,6 @@ function mas(){
     let cardData = library.at(index)
 
     //Inseguro, es mejor usar textContent para cada parte del html
-    document.getElementById("main_card").innerHTML = infoCard(cardData)
+    //document.getElementById("main_card").innerHTML = infoCard(cardData)
+    infoCard(cardData)
 }
