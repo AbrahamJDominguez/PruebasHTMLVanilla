@@ -1,15 +1,56 @@
 .card {
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-self: center;
     align-items: center;
-    width: 250px;
-    height: 350px;
+    width: 350px;
+    height: 200px;
     justify-content: center;
     border-radius: 20px;
-    border-style: solid;
+    background-color: rgba(203, 228, 245, 0.466);
+    box-shadow:rgba(0, 0, 0, 0.40) 10px;
+    /*
+    position: relative;
+    */
+
+    img{
+        border-radius: 20px;
+        /*
+        position: absolute;
+        */
+        text-align: center;
+        top: 0;
+        height: 75%;
+        width: auto;
+    }
 
     h1{
         text-align: center;
+        width: 100%;
+        margin-bottom: 4px;
     }
+
+    .info_card {
+        /*
+        position: absolute;
+        */
+        text-align: center;
+        bottom: 0;
+        width: 67%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+nav {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: antiquewhite;
+    background-color: rgba(0, 0, 0, 0.40);
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
