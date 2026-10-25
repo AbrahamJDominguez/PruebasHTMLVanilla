@@ -8,12 +8,30 @@
 </head>
 <body>
 
+    <header>
+        <nav>
+            <div>
+                <h1>Películas</h1>
+            </div>
+            <div>
+                <span>
+                    <button id = 'button_session'>
+                        Sesión
+                    </button>
+                </span>
+            </div>
+        </nav>
+    </header>
+
     <div class = 'card' id = 'main_card'>
-        <img src="" alt="Imagen del señor de los anillos">
-        <h1>The lord of the rings</h1>
-        <span>Autor: J.R.R Tolkien</span>
-        <span>600 páginas</span>
-        <span>Aún no leído</span>
+        <img id = 'img_card' src=".\src\lotr.jpg" alt="Imagen del señor de los anillos">
+        
+        <div class = 'info_card'>
+            <h1 id = 'title_card'>The lord of the rings</h1>
+            <span id = 'author_card'>Autor: J.R.R Tolkien</span>
+            <span id = 'pages_card'>600 páginas</span>
+            <span id = 'status_card'>Aún no leído</span>
+        </div>
     </div>
 
     <button type="button" onclick="menos();"> <- </button><button type="button" onclick="mas();"> -></button>
